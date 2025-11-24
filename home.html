@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+</head>
+<body>
+    <style>
+ :root{
+            --blueSoft: #9cc4ec;
+            --navy: #1e2a44;
+            --whiteSoft: #9cc4ec;
+        }
+
+        body{
+            margin:0;
+            background: var(--whiteSoft);
+            font-family: "Poppins", sans-serif;
+            color: var(--navy);
+        }
+
+        
+        header{
+            padding: 18px 26px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background:#9cc4ec;
+            border-bottom:1px solid #e4e8ee7c;
+            position: sticky;
+            top:0;
+        }
+
+        header a{
+            text-decoration:none;
+            color:var(--navy);
+            margin-right:16px;
+            font-weight:600;
+        }
+
+        
+        .foto{
+            background: url("foto web.png");
+            background-size:cover;
+            background-position:center;
+            height: 1000px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            position:relative;
+        }
+
+        .foto::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:rgba(207,232,255,0.4);
+        }
+
+        .box1{
+            background:rgb(245, 245, 245);
+            z-index:2;
+            padding:30px 42px;
+            border-radius:16px;
+            text-align:center;
+            box-shadow:0px 18px 30px rgba(0,0,0,0.05);
+        }
+
+        .box1 h1{
+            font-size:36px;
+            margin-bottom:6px;
+        }
+
+        .box2{
+            display:inline-block;
+            margin-top:16px;
+            padding:12px 30px;
+            border-radius:999px;
+            background:var(--blueSoft);
+            color:var(--navy);
+            font-weight:600;
+            border:none;
+            cursor:pointer;
+            transition:.5s;
+        }
+
+        .hero-btn:hover{
+            transform:translateY(-4px);
+            box-shadow:0 10px 20px rgba(30,42,68,0.12);
+        }
+
+        section{
+            max-width:860px;
+            margin:50px auto;
+            padding:0 18px;
+            text-align:center;
+        }
+
+        .boxkecil{
+            display:flex;
+            justify-content:center;
+            gap:16px;
+            flex-wrap:wrap;
+        }
+
+        .boxkecil2{
+            width:220px;
+            height:130px;
+            background:#ffffff;
+            border-radius:12px;
+            box-shadow:0 6px 16px rgba(0,0,0,0.05);
+        }
+
+        .boxkecil2 img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+}
+
+        footer{
+            text-align:center;
+            padding:30px 0;
+            opacity:0.7;
+        }
+
+        html{scroll-behavior:smooth;}
+
+        .fade{
+            opacity:0;
+            transform:translateY(22px);
+            transition:.7s;
+        }
+        .fade.show{
+            opacity:1;
+            transform:none;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo" style="font-weight:700;">Memories XI</div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#g">Kutipan</a>
+        <a href="#t">gallery</a>
+        <a href="g">Teacher</a>
+        <a href="t">Student</a>
+        <a href="h">Archive</a>
+    </nav>
+</header>
+
+<div class="foto">
+    <div class="box1 fade">
+        <h1>BLUETECH RPL 1</h1>
+        <p style="margin-bottom:10px;">everything about rpl 1</p>
+        <a href="#g" class="hero-btn">our journey</a>
+    </div>
+</div>
+
+<section id="t" class="fade">
+    <h2>ʚɞ About ʚɞ</h2>
+    <p>From the first day to the last, we shared moments that made this class unforgettable. Not everything was perfect, but every day we spent together mattered.</p>
+</section>
+
+<section id="g" class="fade">
+    <h2>gambar</h2>
+    <div class="boxkecil">
+        <div class="boxkecil2"><img src="foto 3.jpeg"></div>
+        <div class="boxkecil2"><img src="foto 4.jpeg"></div>
+        <div class="boxkecil2"><img src="foto 1.jpeg"></div>
+    </div>
+</section>
+
+<footer>
+     ⋆ ˚｡⋆୨  Memories XI RPL 1 ୧⋆ ˚｡⋆
+</footer>
+
+<script>
+    const elements = document.querySelectorAll(".fade");
+
+    function reveal(){
+        elements.forEach(el=>{
+            if(el.getBoundingClientRect().top < window.innerHeight - 80){
+                el.classList.add("show");
+            }
+        });
+    }
+    window.addEventListener("load", reveal);
+    window.addEventListener("scroll", reveal);
+    reveal();
+</script>
+
+    </style>
+</body>
+</html>
